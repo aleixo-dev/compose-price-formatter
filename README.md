@@ -1,7 +1,6 @@
 # Compose Price Formatter
 
-![Version](https://img.shields.io/github/v/release/usuario/priceinput-compose?style=flat-square)  
-![Size](https://img.shields.io/github/repo-size/usuario/priceinput-compose?style=flat-square)  ![Contributors](https://img.shields.io/github/contributors/usuario/priceinput-compose?style=flat-square)  ![License](https://img.shields.io/github/license/usuario/priceinput-compose?style=flat-square)  
+![Version](https://img.shields.io/github/v/release/aleixo-dev/compose-price-formatter?style=flat-square) ![Size](https://img.shields.io/github/repo-size/aleixo-dev/compose-price-formatter?style=flat-square)  ![Contributors](https://img.shields.io/github/contributors/aleixo-dev/compose-price-formatter?style=flat-square) ![License](https://img.shields.io/github/license/aleixo-dev/compose-price-formatter?style=flat-square)  
 
 The **PriceInput Compose Component** is an input field for monetary values created to be used in Android apps with Jetpack Compose. It formats the user's input as currency (e.g., "R$ 1,234.56") and offers full customization to fit the style of your app.
 
