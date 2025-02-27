@@ -26,7 +26,7 @@ allprojects {
 }
 
 dependencies {
-    implementation 'com.github.usuario:priceinput-compose:1.0.0'
+    implementation 'com.github.aleixo-dev:compose-price-formatter:1.0.0'
 }
 ```
 
