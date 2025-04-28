@@ -81,8 +81,5 @@ fun PriceInput(
         modifier = modifier
             .focusRequester(focusRequester)
             .onFocusChanged { isFocused = it.isFocused }
-            .clip(MaterialTheme.shapes.medium)
-            .background(MaterialTheme.colorScheme.surfaceContainerLow)
-            .padding(horizontal = 20.dp, vertical = 10.dp),
     )
 }
