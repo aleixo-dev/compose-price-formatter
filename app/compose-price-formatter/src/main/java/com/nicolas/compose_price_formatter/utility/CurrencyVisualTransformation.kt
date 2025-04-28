@@ -1,4 +1,4 @@
-package com.nicolas.composepriceformatter.utility
+package com.nicolas.compose_price_formatter.utility
 
 import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.text.input.OffsetMapping
