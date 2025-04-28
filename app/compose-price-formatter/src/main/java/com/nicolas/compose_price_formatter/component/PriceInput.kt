@@ -1,4 +1,4 @@
-package com.nicolas.composepriceformatter.component
+package com.nicolas.compose_price_formatter.component
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -27,7 +27,7 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.core.text.isDigitsOnly
-import com.nicolas.composepriceformatter.utility.CurrencyVisualTransformation
+import com.nicolas.compose_price_formatter.utility.CurrencyVisualTransformation
 
 @Composable
 fun PriceInput(
