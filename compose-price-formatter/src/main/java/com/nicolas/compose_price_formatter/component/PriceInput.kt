@@ -9,6 +9,7 @@ import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
+import androidx.compose.material3.TextFieldColors
 import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -25,6 +26,7 @@ import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.core.text.isDigitsOnly
 import com.nicolas.compose_price_formatter.utility.CurrencyVisualTransformation
@@ -41,7 +43,8 @@ fun PriceInput(
         fontFamily = MaterialTheme.typography.titleLarge.fontFamily,
         fontWeight = FontWeight.Medium
     ),
-    hint : String = "R$ 0,00"
+    textFieldColor: TextFieldColors = TextFieldDefaults.colors(),
+    hint: String = "R$ 0,00"
 ) {
 
     val focusRequester = remember { FocusRequester() }
@@ -62,14 +65,7 @@ fun PriceInput(
                 alpha = if (price.isNotBlank() || isFocused) 0.8f else 0.4f
             ),
         ),
-        colors = TextFieldDefaults.colors(
-            focusedContainerColor = MaterialTheme.colorScheme.surfaceContainerLow,
-            unfocusedContainerColor = MaterialTheme.colorScheme.surfaceContainerLow,
-            disabledContainerColor = MaterialTheme.colorScheme.surfaceContainerLow,
-            focusedIndicatorColor = MaterialTheme.colorScheme.surfaceContainerLow,
-            unfocusedIndicatorColor = MaterialTheme.colorScheme.surfaceContainerLow,
-            disabledIndicatorColor = MaterialTheme.colorScheme.surfaceContainerLow,
-        ),
+        colors = textFieldColor,
         placeholder = {
             Text(
                 modifier = Modifier.fillMaxWidth(),
@@ -83,12 +79,6 @@ fun PriceInput(
         visualTransformation = CurrencyVisualTransformation(),
         maxLines = 1,
         modifier = modifier
-            .width(220.dp)
-            .border(
-                width = 2.dp,
-                color = MaterialTheme.colorScheme.surfaceVariant,
-                shape = MaterialTheme.shapes.medium
-            )
             .focusRequester(focusRequester)
             .onFocusChanged { isFocused = it.isFocused }
             .clip(MaterialTheme.shapes.medium)
