@@ -21,3 +21,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "ComposePriceFormatter"
 include(":app")
+include(":app:compose-price-formatter")
