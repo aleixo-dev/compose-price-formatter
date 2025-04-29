@@ -25,7 +25,7 @@ allprojects {
 }
 
 dependencies {
-    implementation 'com.github.aleixo-dev:compose-price-formatter:1.0.0'
+    implementation 'com.github.aleixo-dev:compose-price-formatter:$version'
 }
 ```
 
@@ -35,13 +35,15 @@ Here is a basic example of how to use the PriceInput component in your Jetpack C
 
 ```kotlin
 @Composable
-fun MyScreen() {
+fun MyScreen(modifier : Modifier = Modifier) {
     var price by remember { mutableStateOf("") }
 
     PriceInput(
+        modifier = modifier,
         price = price,
         onPriceChange = { newPrice -> price = newPrice },
         hint = "Enter the price",
+        textFieldColor = TextFieldDefaults.colors()
     )
 }
 ```
@@ -51,6 +53,7 @@ The price field holds the value the user types, and the onPriceChange function i
 You can customize the text style and other properties of the PriceInput like this:
 ```kotlin
 PriceInput(
+    modifier = modifier.fillMaxWidth(),
     price = price,
     onPriceChange = { newPrice -> price = newPrice },
     textStyle = TextStyle(
@@ -58,7 +61,17 @@ PriceInput(
         fontWeight = FontWeight.Bold,
         textAlign = TextAlign.Start,
     ),
-    hint = "Enter value"
+    hint = "Enter value",
+    textFieldColor = TextFieldDefaults.colors(
+                errorIndicatorColor = Color.Transparent,
+                focusedIndicatorColor = Color.Transparent,
+                unfocusedIndicatorColor = Color.Transparent,
+                focusedContainerColor = MaterialTheme.colorScheme.surfaceContainerHighest,
+                unfocusedContainerColor = MaterialTheme.colorScheme.surfaceContainerHighest,
+                focusedTextColor = MaterialTheme.colorScheme.primary,
+                unfocusedTextColor = MaterialTheme.colorScheme.primary,
+                unfocusedSupportingTextColor = MaterialTheme.colorScheme.primary
+            )
 )
 ```
 
@@ -70,7 +83,8 @@ PriceInput(
 | `price`          | The current value of the price, which is displayed in the input field.                                                                         |
 | `onPriceChange`  | A function called whenever the value of the input field changes. This function should update the `price` state.                               |
 | `textStyle`      | A text style to customize the appearance of the value. You can change font size, weight, color, and alignment here.                            |
-| `hint`           | Placeholder text displayed when the input field is empty.                                                                     
+| `hint`           | Placeholder text displayed when the input field is empty.                                                                     |
+| `textFieldColors`| Change the default color values used by TextField                                                        |
 
 
 ## Dependencies
